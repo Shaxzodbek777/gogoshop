@@ -2,6 +2,13 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:gogoshop/Pages/Auth_Page/FAPage.dart';
+import 'package:gogoshop/Pages/ProfilePages/Bezopasna.dart';
+import 'package:gogoshop/Pages/ProfilePages/ContactUsPage.dart';
+import 'package:gogoshop/Pages/ProfilePages/LangPage.dart';
+import 'package:gogoshop/Pages/ProfilePages/adresPage.dart';
+import 'package:gogoshop/Pages/ProfilePages/oplatapage.dart';
+import 'package:gogoshop/Pages/ProfilePages/voprospage.dart';
 import 'package:image_picker/image_picker.dart';
 class ProfilrPage extends StatefulWidget {
   const ProfilrPage({super.key});
@@ -13,6 +20,8 @@ class ProfilrPage extends StatefulWidget {
 class _ProfilrPageState extends State<ProfilrPage> {
   File? _image;
   final ImagePicker _picker = ImagePicker();
+
+
 
 
   _imgFromGallery() async {
@@ -60,6 +69,9 @@ class _ProfilrPageState extends State<ProfilrPage> {
           );
         });
   }
+
+  String langone = "Languages";
+
 
 
   @override
@@ -213,183 +225,283 @@ class _ProfilrPageState extends State<ProfilrPage> {
                     ),
                   ),
                   SizedBox(height: 7,),
-                  Container(
-                    height: 60,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.only(left: 8.0,right: 15.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Row(
-                            children: [
-                              Image(image: AssetImage('assets/images/icons/location.png')),
-                              SizedBox(width: 10,),
-                              Text('Адреса',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
-                            ],
-                          ),
-                        ),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Icon(Icons.navigate_next)),
-                      ],
-                    ),
+              GestureDetector(
+                child:     Container(
+                  height: 60,
+                  width: double.maxFinite,
+                  padding: EdgeInsets.only(left: 8.0,right: 15.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  SizedBox(height: 7,),
-                  Container(
-                    height: 60,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.only(left: 8.0,right: 15.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Row(
-                            children: [
-                              Image(image: AssetImage('assets/images/icons/mony.png')),
-                              SizedBox(width: 10,),
-                              Text('Способы оплаты',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
-                            ],
-                          ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        child: Row(
+                          children: [
+                            Image(image: AssetImage('assets/images/icons/location.png')),
+                            SizedBox(width: 10,),
+                            Text('Адреса',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
+                          ],
                         ),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Icon(Icons.navigate_next)),
-                      ],
+                      ),
+                      GestureDetector(
+                          onTap: (){},
+                          child: Icon(Icons.navigate_next)),
+                    ],
+                  ),
+                ),
+                onTap: (){
+                  Navigator.pushNamed(context, AdrisPage.id);
+                },
+              ),
+                  SizedBox(height: 7,),
+                  GestureDetector(
+                    child: Container(
+                      height: 60,
+                      width: double.maxFinite,
+                      padding: EdgeInsets.only(left: 8.0,right: 15.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            child: Row(
+                              children: [
+                                Image(image: AssetImage('assets/images/icons/mony.png')),
+                                SizedBox(width: 10,),
+                                Text('Способы оплаты',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
+                              ],
+                            ),
+                          ),
+                          GestureDetector(
+                              onTap: (){},
+                              child: Icon(Icons.navigate_next)),
+                        ],
+                      ),
                     ),
+                      onTap: (){
+                      Navigator.pushNamed(context, OplataPage.id);
+                      },
                   ),
                   SizedBox(height: 30,),
-                  Container(
-                    height: 60,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.only(left: 8.0,right: 15.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Row(
-                            children: [
-                              Image(image: AssetImage('assets/images/icons/lang.png')),
-                              SizedBox(width: 10,),
-                              Text('Язык',style: TextStyle(fontFamily: "Musio",fontSize: 18),),
-                            ],
+                  GestureDetector(
+                    child: Container(
+                      height: 60,
+                      width: double.maxFinite,
+                      padding: EdgeInsets.only(left: 8.0,right: 15.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            child: Row(
+                              children: [
+                                Image(image: AssetImage('assets/images/icons/lang.png')),
+                                SizedBox(width: 10,),
+                                Text('Язык',style: TextStyle(fontFamily: "Musio",fontSize: 18),),
+                              ],
+                            ),
                           ),
-                        ),
-                        Text("Русский",style: TextStyle(color: Color(0xFFFF5001), fontFamily: 'Musio',fontSize: 18),),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Icon(Icons.navigate_next)),
-                      ],
+                          Text("Русский",style: TextStyle(color: Color(0xFFFF5001), fontFamily: 'Musio',fontSize: 18),),
+                          GestureDetector(
+                              onTap: (){
+                                Navigator.pushNamed(context, LanguagePage.id);
+                              },
+                              child: Icon(Icons.navigate_next)),
+                        ],
+                      ),
                     ),
+                    onTap: (){
+                      Navigator.pushNamed(context, LanguagePage.id);
+                    },
+
                   ),
                   SizedBox(height: 7,),
-                  Container(
-                    height: 60,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.only(left: 8.0,right: 15.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Row(
-                            children: [
-                              Image(image: AssetImage('assets/images/icons/Lock.png')),
-                              SizedBox(width: 10,),
-                              Text('Безопасность',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
-                            ],
-                          ),
-                        ),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Icon(Icons.navigate_next)),
-                      ],
-                    ),
-                  ),
+                 GestureDetector(
+                   child:  Container(
+                     height: 60,
+                     width: double.maxFinite,
+                     padding: EdgeInsets.only(left: 8.0,right: 15.0),
+                     decoration: BoxDecoration(
+                       color: Colors.white,
+                       borderRadius: BorderRadius.circular(10),
+                     ),
+                     child: Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                       crossAxisAlignment: CrossAxisAlignment.center,
+                       children: [
+                         SizedBox(
+                           child: Row(
+                             children: [
+                               Image(image: AssetImage('assets/images/icons/Lock.png')),
+                               SizedBox(width: 10,),
+                               Text('Безопасность',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
+                             ],
+                           ),
+                         ),
+                         GestureDetector(
+                             onTap: (){},
+                             child: Icon(Icons.navigate_next)),
+                       ],
+                     ),
+                   ),
+                   onTap: (){
+                     Navigator.pushNamed(context, Bizopasna.id);
+                   },
+                 ),
                   SizedBox(height: 30,),
-                  Container(
-                    height: 60,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.only(left: 8.0,right: 15.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Row(
-                            children: [
-                              Image(image: AssetImage('assets/images/icons/info.png')),
-                              SizedBox(width: 10,),
-                              Text('Часто задаваемые вопросы',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
-                            ],
+                  GestureDetector(
+                    child: Container(
+                      height: 60,
+                      width: double.maxFinite,
+                      padding: EdgeInsets.only(left: 8.0,right: 15.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            child: Row(
+                              children: [
+                                Image(image: AssetImage('assets/images/icons/info.png')),
+                                SizedBox(width: 10,),
+                                Text('Часто задаваемые вопросы',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
+                              ],
+                            ),
                           ),
-                        ),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Icon(Icons.navigate_next)),
-                      ],
+                          GestureDetector(
+                              onTap: (){},
+                              child: Icon(Icons.navigate_next)),
+                        ],
+                      ),
                     ),
+                    onTap: (){
+                      Navigator.pushNamed(context, VoprosPage.id);
+                    },
                   ),
                   SizedBox(height: 7,),
-                  Container(
-                    height: 60,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.only(left: 8.0,right: 15.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Row(
-                            children: [
-                              Image(image: AssetImage('assets/images/icons/Chat.png')),
-                              SizedBox(width: 10,),
-                              Text('Связаться с нами',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
-                            ],
+                  GestureDetector(
+                    child: Container(
+                      height: 60,
+                      width: double.maxFinite,
+                      padding: EdgeInsets.only(left: 8.0,right: 15.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            child: Row(
+                              children: [
+                                Image(image: AssetImage('assets/images/icons/Chat.png')),
+                                SizedBox(width: 10,),
+                                Text('Связаться с нами',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
+                              ],
+                            ),
                           ),
-                        ),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Icon(Icons.navigate_next)),
-                      ],
+                          GestureDetector(
+                              onTap: (){},
+                              child: Icon(Icons.navigate_next)),
+                        ],
+                      ),
                     ),
+                  onTap: (){
+                      Navigator.pushNamed(context, ContactUsPage.id);
+                  },
                   ),
                   SizedBox(height: 40,),
-                  Row(
-                    children: [
-                      SizedBox(width: 24,),
-                      Image(image: AssetImage('assets/images/icons/Logout.png')),
-                      SizedBox(width: 16,),
-                      Text('Выйти',style: TextStyle(color: Color(0xFFFF5001), fontFamily: 'Musio', fontSize: 18),)
-                    ],
-                  )
+                 GestureDetector(
+                   child: Row(
+                     children: [
+                       SizedBox(width: 24,),
+                       Image(image: AssetImage('assets/images/icons/Logout.png')),
+                       SizedBox(width: 16,),
+                       Text('Выйти',style: TextStyle(color: Color(0xFFFF5001), fontFamily: 'Musio', fontSize: 18),)
+                     ],
+                   ),
+                   onTap: (){
+                 showModalBottomSheet(
+                   context: context,
+                   builder: (BuildContext context){
+                     return Container(
+                       height: 262,
+                       width: double.infinity,
+                       decoration: BoxDecoration(
+                         borderRadius: BorderRadius.only(topLeft: Radius.circular(44),topRight: Radius.circular(44), )
+                       ),
+                       child: Center(
+                         child: Column(
+                           children: [
+                             SizedBox(height: 35,),
+                             Text("Выйти", style: TextStyle(fontSize: 24, fontFamily: 'Musio', color: Color(0xFFF75555), fontWeight: FontWeight.bold),),
+                             SizedBox(height: 24,),
+                             Image(image: AssetImage('assets/images/linevite.png'),),
+                             SizedBox(height: 24,),
+                             Text("Вы действительно хотите выйти?", style: TextStyle(fontSize: 20, fontFamily: "Musio"),),
+                             SizedBox(height: 24,),
+                             Row(
+                               mainAxisAlignment: MainAxisAlignment.center,
+                               children: [
+                                 GestureDetector(
+                                   child:  Container(
+                                     height: 54,
+                                     width: 184,
+                                     decoration: BoxDecoration(
+                                         color: Color(0xFFE7E7E7),
+                                         borderRadius: BorderRadius.circular(100)
+                                     ),
+                                     child: Center(
+                                         child:   Text("Отменить", style: TextStyle(fontFamily: "Musio", fontSize: 16, fontWeight: FontWeight.bold),)
+                                     ),
+                                   ),
+                                   onTap: (){
+                                     Navigator.of(context).pop();
+                                   },
+                                 ),
+                                 SizedBox(width: 12,),
+                                 GestureDetector(
+                                   child:  Container(
+                                     height: 54,
+                                     width: 184,
+                                     decoration: BoxDecoration(
+                                         color: Color(0xFFFF5001),
+                                         borderRadius: BorderRadius.circular(100)
+                                     ),
+                                     child: Center(
+                                         child:   Text("Выйти", style: TextStyle(color: Colors.white, fontFamily: "Musio", fontSize: 16, fontWeight: FontWeight.bold),)
+                                     ),
+                                   ),
+                                   onTap: (){
+                                     Navigator.pushReplacementNamed(context, FAPage.id);
+                                   },
+                                 )
+                               ],
+                             )
+                           ],
+                         ),
+                       ),
+                     );
+                   }
+                 );
+                   },
+                 )
 
 
 

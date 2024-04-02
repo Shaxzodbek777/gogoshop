@@ -8,9 +8,18 @@ import 'package:gogoshop/Pages/MainPages/Katalog.dart';
 import 'package:gogoshop/Pages/MainPages/MainPage.dart';
 import 'package:gogoshop/Pages/MainPages/ProfilePage.dart';
 import 'package:gogoshop/Pages/MainPages/korzinakPage.dart';
+import 'package:gogoshop/Pages/ProfilePages/Bezopasna.dart';
+import 'package:gogoshop/Pages/ProfilePages/ContactUsPage.dart';
+import 'package:gogoshop/Pages/ProfilePages/LangPage.dart';
+import 'package:gogoshop/Pages/ProfilePages/adresPage.dart';
+import 'package:gogoshop/Pages/ProfilePages/chat.dart';
 import 'package:gogoshop/Pages/SplacePage.dart';
 
 import 'Pages/ProductPages/ProductPages.dart';
+import 'Pages/ProfilePages/dobavitadris.dart';
+import 'Pages/ProfilePages/dobavitcard.dart';
+import 'Pages/ProfilePages/oplatapage.dart';
+import 'Pages/ProfilePages/voprospage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +50,16 @@ class MyApp extends StatelessWidget {
         KatalogPage.id: (context)=> KatalogPage(),
         KorzinkaPage.id: (context)=>KorzinkaPage(),
         ProfilrPage.id: (context)=> ProfilrPage(),
-        ProductPages.id: (context)=> ProductPages()
+        ProductPages.id: (context)=> ProductPages(),
+        ContactUsPage.id: (context)=> ContactUsPage(),
+        ChatPage.id: (context)=> ChatPage(),
+        VoprosPage.id: (context)=>VoprosPage(),
+        Bizopasna.id: (context)=> Bizopasna(),
+        LanguagePage.id: (context)=>LanguagePage(),
+        OplataPage.id: (context)=>OplataPage(),
+        DobavitCard.id:  (context)=> DobavitCard(),
+        AdrisPage.id: (context)=> AdrisPage(),
+        DobavitAdris.id: (context)=>DobavitAdris()
       },
     );
   }

@@ -16,6 +16,7 @@ dependencies:
   image_picker: ^1.0.7
   device_info_plus: ^10.0.1
   story_view: ^0.16.5
+  flutter_chat_ui: ^1.6.12
 
 dev_dependencies:
   flutter_test:

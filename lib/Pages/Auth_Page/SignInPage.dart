@@ -107,7 +107,7 @@ class _SignInPageState extends State<SignInPage> {
                         controller: passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
-                            hintText: "Парол",
+                            hintText: "Пароль",
                             border: InputBorder.none
                         ),
                       ),
