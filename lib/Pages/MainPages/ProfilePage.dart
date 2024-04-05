@@ -3,13 +3,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:gogoshop/Pages/Auth_Page/FAPage.dart';
-import 'package:gogoshop/Pages/ProfilePages/Bezopasna.dart';
 import 'package:gogoshop/Pages/ProfilePages/ContactUsPage.dart';
 import 'package:gogoshop/Pages/ProfilePages/LangPage.dart';
 import 'package:gogoshop/Pages/ProfilePages/adresPage.dart';
-import 'package:gogoshop/Pages/ProfilePages/oplatapage.dart';
-import 'package:gogoshop/Pages/ProfilePages/voprospage.dart';
+import 'package:gogoshop/Pages/ProfilePages/myorder.dart';
 import 'package:image_picker/image_picker.dart';
+
+import '../ProfilePages/paypage.dart';
+import '../ProfilePages/personalinfo.dart';
+import '../ProfilePages/quseeion.dart';
+import '../ProfilePages/safepage.dart';
 class ProfilrPage extends StatefulWidget {
   const ProfilrPage({super.key});
   static final String id = 'ProfilrPage';
@@ -18,11 +21,9 @@ class ProfilrPage extends StatefulWidget {
 }
 
 class _ProfilrPageState extends State<ProfilrPage> {
+
   File? _image;
   final ImagePicker _picker = ImagePicker();
-
-
-
 
   _imgFromGallery() async {
     XFile? image =
@@ -169,60 +170,68 @@ class _ProfilrPageState extends State<ProfilrPage> {
                     ],
                   ),
                   SizedBox(height: 30,),
-                  Container(
-                    height: 60,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.only(left: 10,right: 15.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Row(
-                            children: [
-                              Image(image: AssetImage('assets/images/icons/basket.png')),
-                              SizedBox(width: 10,),
-                              Text('Мои заказы', style: TextStyle(fontFamily: "Musio",fontSize: 18),),
-                            ],
-                          ),
-                        ),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Icon(Icons.navigate_next)),
-                      ],
-                    ),
-                  ),
+             GestureDetector(
+               child:      Container(
+                 height: 60,
+                 width: double.maxFinite,
+                 padding: EdgeInsets.only(left: 10,right: 15.0),
+                 decoration: BoxDecoration(
+                   color: Colors.white,
+                   borderRadius: BorderRadius.circular(10),
+                 ),
+                 child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                   crossAxisAlignment: CrossAxisAlignment.center,
+                   children: [
+                     SizedBox(
+                       child: Row(
+                         children: [
+                           Image(image: AssetImage('assets/images/icons/basket.png')),
+                           SizedBox(width: 10,),
+                           Text('Мои заказы', style: TextStyle(fontFamily: "Musio",fontSize: 18),),
+                         ],
+                       ),
+                     ),
+                     GestureDetector(
+                         onTap: (){},
+                         child: Icon(Icons.navigate_next)),
+                   ],
+                 ),
+               ),
+               onTap: (){
+                 Navigator.pushNamed(context, MyOrderPage.id);
+               },
+             ),
                   SizedBox(height: 7,),
-                  Container(
-                    height: 60,
-                    width: double.maxFinite,
-                    padding: EdgeInsets.only(left: 8.0,right: 15.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          child: Row(
-                            children: [
-                              Image(image: AssetImage('assets/images/icons/person.png')),
-                              SizedBox(width: 10,),
-                              Text('Личные данные',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
-                            ],
+                  GestureDetector(
+                    child: Container(
+                      height: 60,
+                      width: double.maxFinite,
+                      padding: EdgeInsets.only(left: 8.0,right: 15.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            child: Row(
+                              children: [
+                                Image(image: AssetImage('assets/images/icons/person.png')),
+                                SizedBox(width: 10,),
+                                Text('Личные данные',style: TextStyle(fontFamily: "Musio",fontSize: 18)),
+                              ],
+                            ),
                           ),
-                        ),
-                        GestureDetector(
-                            onTap: (){},
-                            child: Icon(Icons.navigate_next)),
-                      ],
+                          GestureDetector(
+                              onTap: (){},
+                              child: Icon(Icons.navigate_next)),
+                        ],
+                      ),
                     ),
+                      onTap:(){Navigator.pushNamed(context, LichniDalnix.id);} ,
                   ),
                   SizedBox(height: 7,),
               GestureDetector(

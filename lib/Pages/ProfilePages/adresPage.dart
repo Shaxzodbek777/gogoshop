@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'dobavitadris.dart';
+import 'addadress.dart';
+
 
 class AdrisPage extends StatefulWidget {
   const AdrisPage({super.key});
