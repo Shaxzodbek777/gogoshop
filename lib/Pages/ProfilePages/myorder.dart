@@ -21,7 +21,24 @@ class _MyOrderPageState extends State<MyOrderPage> {
         width: double.infinity,
         child: Column(
           children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("Aktivni",style: TextStyle(color: Color(0xFFFF5001), fontSize: 18, ),),
+              SizedBox(width: 30,),
+              Text("Bse",style: TextStyle(color: Color(0xFFFF5001), fontSize: 18, ),),
+            ],
+          ),
+            SizedBox(height: 14,),
+            Container(
+              height: 188,
+              width: 380,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(32)
+              ),
 
+            )
           ],
         ),
       ),
